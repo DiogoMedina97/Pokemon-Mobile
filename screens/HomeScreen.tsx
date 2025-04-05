@@ -20,7 +20,7 @@ export default function HomeScreen() {
     setLoading(true)
 
     try {
-      const response = await axios.get(`http://localhost:3000/api/pokemons/${value}`);
+      const response = await axios.get(`${process.env.EXPO_PUBLIC_API_URL}/api/pokemons/${value}`);
       const { data } = response.data;
       const abilities: string[] = data;
 
